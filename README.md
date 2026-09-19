@@ -1,7 +1,22 @@
 # Secure FastAPI Template
 
-Secure API boilerplate implementing OWASP Top 10 mitigations with validation, auth, rate limiting, and scanning hooks.
+A small FastAPI baseline with OWASP-oriented controls: validation, auth, rate limiting, security headers, and structured logging.
 
-This repo currently holds the **project plan**. Implementation starts after Python + OWASP training.
+**Status:** planned. See [PROJECT.md](PROJECT.md) for architecture, OWASP mappings, and build order.
 
-See [PROJECT.md](PROJECT.md) for architecture, OWASP mappings, and build order.
+## What it includes
+
+- Register / login with hashed passwords and bearer tokens
+- Pydantic request validation
+- Rate limiting
+- CORS allowlist and security headers
+- Structured logs with no sensitive fields
+- Optional Bandit / Semgrep in CI
+
+## Stack
+
+Python, FastAPI, Pydantic v2, SlowAPI, OAuth2, SQLite, Docker.
+
+## Security constraints
+
+Do not commit real passwords, JWT signing keys, or `.env` files that contain secrets.
